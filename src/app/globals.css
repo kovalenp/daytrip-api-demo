@@ -1,0 +1,91 @@
+@tailwind base;
+
+@import "react-datepicker/dist/react-datepicker.css";
+@import "@radix-ui/themes/styles.css";
+
+@tailwind components;
+@tailwind utilities;
+
+.icon {
+  width: 1em;
+  height: 1em;
+  color: currentColor;
+}
+
+.icon path {
+  fill: currentColor;
+}
+
+.react-datepicker-wrapper input {
+  @apply outline outline-1 outline-gray-300 rounded-md py-2 px-3 w-full;
+}
+
+.react-datepicker__triangle {
+  display: none;
+}
+.react-datepicker__day--selected {
+  background: var(--accent-9);
+}
+
+.react-datepicker__day--selected:hover,
+.react-datepicker__day--keyboard-selected:hover {
+  background: var(--accent-10);
+  color: white;
+}
+
+.react-datepicker__day--keyboard-selected {
+  background: rgb(219 234 254 / var(--tw-bg-opacity));
+}
+
+.react-datepicker__header {
+  background: white;
+}
+
+.react-datepicker__tab-loop {
+  display: contents;
+}
+
+.CollapsibleContent {
+  overflow: hidden;
+}
+.CollapsibleContent[data-state='open'] {
+  animation: slideDown 300ms ease-out;
+}
+.CollapsibleContent[data-state='closed'] {
+  animation: slideUp 300ms ease-out;
+}
+
+.scrollable-content {
+  overflow-x:hidden;
+  overflow-y:scroll;
+}
+.scrollable-content::-webkit-scrollbar {
+  background:transparent;
+  width: 8px;
+}
+
+.scrollable-content::-webkit-scrollbar * {
+  background:transparent;
+}
+.scrollable-content::-webkit-scrollbar-thumb {
+  background:darkgrey;
+  border-radius: 8px;
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-collapsible-content-height);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-collapsible-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
